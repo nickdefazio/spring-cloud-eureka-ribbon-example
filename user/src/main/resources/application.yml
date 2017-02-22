@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: user
+
+server:
+  port: 8888
+
+eureka:
+  instance:
+    hostname: users
+  client:
+    registerWithEureka: false
+    fetchRegistry: true
+    serviceUrl:
+          defaultZone: http://localhost:8761/eureka
+
+sayhello:
+  ribbon:
+    eureka:
+      enabled: true
+    #listOfServers: localhost:8090,localhost:9092,localhost:9999
+    ServerListRefreshInterval: 15000
+    NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
+
