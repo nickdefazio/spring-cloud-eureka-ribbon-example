@@ -6,7 +6,7 @@ This project is meant to create an example of how ribbon and eureka work togethe
 * https://spring.io/blog/2015/01/20/microservice-registration-and-discovery-with-spring-cloud-and-netflix-s-eureka (eureka-service)
 
 ## How to run
-1. Start eureka-service
+**Start eureka-service**
 ```
 //From ${project root}/eureka-service
 gradle clean build
@@ -16,7 +16,7 @@ java -jar build/libs/eureka-service-0.0.1-SNAPSHOT.jar
 * Verify that euerka is running by going to `http://localhost:8761`
 
 
-2. Start the say-hello service
+**Start the say-hello service**
 ```
 //From ${project root}/say-hello
 gradle clean build
@@ -26,7 +26,7 @@ java -jar -Dserver.port=8081 build/libs/say-hello-0.0.1-SNAPSHOT.jar
 * Verify that the say hello service has registered with eureka using the eureka dashboard on `http://localhost:8761`
 * Verify that `http://localhost:8081/greeting` produces a greeting
 
-3. Start the user service
+**Start the user service**
 ```
 //From ${project root}/user
 gradle clean build
@@ -35,7 +35,7 @@ java -jar -Dserver.port=8090 build/libs/user-0.0.1-SNAPSHOT.jar
 * Verify that the user service has registered with eureka using the eureka dashboard on `http://localhost:8761`
 * Verify that `http://localhost:8090/user` produces a greeting with a name
 
-4. Bring up multiple say-hello services
+**Bring up multiple say-hello services**
 ```
 //From ${project root}/say-hello
 java -jar -Dserver.port=8082 build/libs/say-hello-0.0.1-SNAPSHOT.jar
