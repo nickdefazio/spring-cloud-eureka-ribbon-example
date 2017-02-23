@@ -43,3 +43,8 @@ java -jar -Dserver.port=8083 build/libs/say-hello-0.0.1-SNAPSHOT.jar
 
 ```
 * Verify that eureka is showing multiple instances of the say-hello service are registered
+
+## Reference docs
+* http://blog.abhijitsarkar.org/technical/netflix-eureka/
+* https://github.com/Netflix/ribbon/wiki/Working-with-load-balancers
+* https://github.com/Netflix/ribbon/issues/15
