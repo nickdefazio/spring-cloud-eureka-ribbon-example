@@ -1,0 +1,9 @@
+.DS_Store
+*/build/
+user/.idea/*
+say-hello/.idea/*
+eureka-service/.idea/*
+*.iml
+user/.gradle/*
+say-hello/.gradle/*
+eureka-service/.gradle/*

@@ -13,7 +13,6 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 import java.util.List;
@@ -37,10 +36,11 @@ public class UserApplication {
   private DiscoveryClient discoveryClient;
 
 
-  @RequestMapping("/hi")
+  @RequestMapping("/user")
   public String hi(@RequestParam(value="name", defaultValue="Artaban") String name) {
 
 
+    //For example only. Shows our list of instances
     final List<ServiceInstance> instances = this.discoveryClient.getInstances("sayhello");
     for(final ServiceInstance instance : instances){
       System.out.println("Instance: " + instance.getHost().toString());
@@ -48,8 +48,12 @@ public class UserApplication {
       System.out.println("URI: " + instance.getUri().toString());
     }
 
+    //TODO: Wrap this with Hystrix
+    //=====================================
+    final String greeting = this.restTemplate.getForObject("http://sayhello/greeting", String.class);
+    //=====================================
 
-    String greeting = this.restTemplate.getForObject("http://sayhello/greeting", String.class);
+
     return String.format("%s, %s!", greeting, name);
   }
 

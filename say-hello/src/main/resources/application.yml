@@ -2,13 +2,11 @@ spring:
   application:
     name: sayhello
 
-server:
-  port: 8090
 
 eureka:
   instance:
     hostname: sayhello
-    preferIpAddress: true
+    preferIpAddress: true #this was done for example purposes only
   client:
     registerWithEureka: true
     fetchRegistry: true

@@ -1,1 +1,1 @@
-# spring-cloud-eureka-ribbon
+# spring-cloud-eureka-ribbon-example
